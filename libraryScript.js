@@ -1,31 +1,45 @@
 const myLibrary = []
+const idList = []
 
 function Book(title, author, numberOfPages, readStatus) {
+    this.id = generateId()
     this.title = title
     this.author = author
     this.numberOfPages = numberOfPages
     this.readStatus = readStatus
+
+    function generateId() {
+        while (true) {
+            let randomId = Math.floor(Math.random() * 9999) + 1000
+
+            if (!idList.includes(randomId)) {
+                idList.push(randomId)
+                return randomId
+            }
+        }
+    }
 }
 
-Book.prototype.addBook = function() {
+Book.prototype.addBook = function () {
     let bookInfo = [
+        this.id,
         this.title,
         this.author,
         this.numberOfPages,
         this.readStatus
     ]
-    
+
     myLibrary.push(bookInfo)
 }
 
 const form = document.querySelector("form")
 form.addEventListener("submit", (event) => {
     event.preventDefault()
-    
+
     let newBook = new Book(
-        document.getElementById("title").value, 
-        document.getElementById("author").value, 
-        document.getElementById("pages").value, 
+        document.getElementById("title").value,
+        document.getElementById("author").value,
+        document.getElementById("pages").value,
         document.getElementById("book-status").value
     )
 
