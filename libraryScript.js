@@ -1,4 +1,4 @@
-const myLibrary = []
+let myLibrary = []
 const idList = []
 
 function Book(title, author, numberOfPages, readStatus) {
@@ -52,22 +52,24 @@ form.addEventListener("submit", (event) => {
 function createCard() {
     let card = document.createElement("div")
     let btn = document.createElement("button")
-    card.textContent = "Book"
     btn.textContent = "Remove"
+    
     btn.classList.add("remove")
     card.classList.add("cards")
-    ids = Math.floor(Math.random() * 10)
-    card.id = "id" + ids
-    btn.id = "id" + ids
+    
     card.style.border = "1px solid black"
 
     let newBook = myLibrary.at(-1)
-    newBook.map(bookInfo => {
+    card.id = `id${newBook[0]}`
+    btn.id = `id${newBook[0]}`
+
+    card.textContent = newBook[1]
+
+    for(let i = 2; i < 5; i++) {
         let info = document.createElement("div")
-        info.textContent = bookInfo
+        info.textContent = newBook[i]
         card.appendChild(info)
-        card.remov
-    })
+    }
     card.appendChild(btn)
     document.body.appendChild(card)
 }
@@ -75,9 +77,18 @@ function createCard() {
 
 document.addEventListener("click", event => {
     if (event.target.classList.contains("remove")) {
-        let card = document.querySelector(`.cards#${event.target.id}`)
+        let id = String(event.target.id)
+        let card = document.querySelector( `.cards#${id}`)
         document.body.removeChild(card)
-        myLibrary.map
+
+        id = Number(id.slice(2,))
+        myLibrary.forEach((book, index) => {
+            if(book.includes(id)) {
+                myLibrary.splice(index, 1)
+                console.log(myLibrary)
+            }
+        })
+
     }
 })
 
