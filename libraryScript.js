@@ -1,12 +1,13 @@
 let myLibrary = []
 const idList = []
 
-function Book(title, author, numberOfPages, readStatus) {
+function Book(title, author, numberOfPages, readStatus, description) {
     this.id = generateId()
     this.title = title
     this.author = author
     this.numberOfPages = numberOfPages
     this.readStatus = readStatus
+    this.description = description
 
     function generateId() {
         while (true) {
@@ -26,7 +27,8 @@ Book.prototype.addBook = function () {
         this.title,
         this.author,
         this.numberOfPages,
-        this.readStatus
+        this.readStatus,
+        this.description
     ]
 
     myLibrary.push(bookInfo)
@@ -35,12 +37,14 @@ Book.prototype.addBook = function () {
 const form = document.querySelector("form")
 form.addEventListener("submit", (event) => {
     event.preventDefault()
-
+    let checkbox = form.querySelector("#book-status")
+    
     let newBook = new Book(
         document.getElementById("title").value,
         document.getElementById("author").value,
         document.getElementById("pages").value,
-        document.getElementById("book-status").value
+        checkbox.checked? checkbox.value: "Incomplete",
+        document.getElementById("description").value
     )
 
     newBook.addBook()
@@ -65,7 +69,7 @@ function createCard() {
 
     card.textContent = newBook[1]
 
-    for(let i = 2; i < 5; i++) {
+    for(let i = 2; i < newBook.length; i++) {
         let info = document.createElement("div")
         info.textContent = newBook[i]
         card.appendChild(info)
