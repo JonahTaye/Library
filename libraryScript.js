@@ -67,12 +67,20 @@ function createCard() {
     card.id = `id${newBook[0]}`
     btn.id = `id${newBook[0]}`
 
-    card.textContent = newBook[1]
-
-    for(let i = 2; i < newBook.length; i++) {
+    for(let i = 1; i < newBook.length; i++) {
         let info = document.createElement("div")
+        let readButton = document.createElement("button")
+
+        if (i === 4) {
+            readButton.textContent = newBook[i]
+            readButton.id = `id${newBook[0]}`
+            readButton.classList.add("statusBtn")
+            card.appendChild(readButton)
+            continue
+        }
         info.textContent = newBook[i]
         card.appendChild(info)
+        
     }
     card.appendChild(btn)
     document.body.appendChild(card)
@@ -93,6 +101,27 @@ document.addEventListener("click", event => {
             }
         })
 
+    }
+
+    if (event.target.classList.contains("statusBtn")) {
+        console.log("hereer")
+        let id = String(event.target.id)
+        let btn = document.querySelector(`.statusBtn#${id}`)
+
+        id = Number(id.slice(2,))
+        if (btn.textContent == "Incomplete") {
+            btn.textContent = "Completed"
+            myLibrary.forEach((book) => {
+                if (book.includes(id)) book[4] = "Completed"
+                console.log(myLibrary)
+            })
+        } else {
+            btn.textContent = "Incomplete"
+            myLibrary.forEach((book) => {
+                if (book.includes(id)) book[4] = "Incomplete"
+                console.log(myLibrary)
+            })
+        }
     }
 })
 
