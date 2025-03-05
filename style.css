@@ -8,11 +8,56 @@
 body {
     display: grid;
     grid-template-rows: 10rem 1fr 5rem;
-    width: 100%;
+    width: max(20rem, 100%);
     min-height: 100vh;
 }
 
 .main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-auto-rows: minmax(20rem, 1fr);
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    gap: 10px;
+    padding: 20px 30px;
+    width: max(20rem, 100%);
+    height: max(20rem, 100%);
+    font-size: max(1.5rem, 3vh);
+}
+
+.cards > div:nth-child(1)::before {
+    content: "Title: ";
+    word-break: keep-all;
+}
+
+.cards > div:nth-child(2)::before {
+    content: "Author: ";
+    word-break: keep-all;
+}
+
+.cards > div:nth-child(3)::before {
+    content: "Pages: ";
+    word-break: keep-all;
+}
+
+.cards > div:nth-child(5):not(div:empty)::before {
+    content: "Description: ";
+    word-break: keep-all;
+}
+
+.cards > div:nth-child(5):not(div:empty) {
+    height: 10rem;
+    overflow-y: scroll;
+}
+
+.cards > div:empty {
+    display: none;
+}
+
+.cards div {
+    word-break: break-all;
 }
