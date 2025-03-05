@@ -86,7 +86,7 @@ function createCard() {
         
     }
     card.appendChild(btn)
-    document.body.appendChild(card)
+    main.prepend(card)
 }
 
 
