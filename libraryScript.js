@@ -78,7 +78,8 @@ function createCard() {
             readButton.textContent = newBook[i]
             readButton.id = `id${newBook[0]}`
             readButton.classList.add("statusBtn")
-            card.appendChild(readButton)
+            card.appendChild(info)
+            info.appendChild(readButton)
             continue
         }
         info.textContent = newBook[i]
