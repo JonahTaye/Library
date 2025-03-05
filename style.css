@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px black solid;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 10rem 1fr 5rem;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
