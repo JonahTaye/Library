@@ -1,5 +1,6 @@
 let myLibrary = []
 const idList = []
+const main = document.querySelector(".main")
 
 function Book(title, author, numberOfPages, readStatus, description) {
     this.id = generateId()
@@ -50,6 +51,8 @@ form.addEventListener("submit", (event) => {
     newBook.addBook()
     createCard()
     form.reset()
+    document.querySelector(".form-dialog").close()
+
     console.log(myLibrary)
 })
 
@@ -122,6 +125,11 @@ document.addEventListener("click", event => {
                 console.log(myLibrary)
             })
         }
+    }
+
+    if (event.target.classList.contains("open-dialog")) {
+        let dialog = document.querySelector(".form-dialog")
+        dialog.showModal()
     }
 })
 
