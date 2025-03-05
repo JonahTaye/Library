@@ -10,20 +10,40 @@
 </head>
 
 <body>
-    <form action="">
-        <label for="title">Book title:</label>
-        <input type="text" name="title" id="title" required>
-        <label for="author">Book Author:</label>
-        <input type="text" name="author" id="author" required>
-        <label for="pages">Book Pages:</label>
-        <input type="number" name="pages" id="pages" required>
-        <label for="book-status">Completed: </label>
-        <input type="checkbox" name="book-status" id="book-status" value="Completed">
-        <label for="description">Description</label>
-        <textarea name="description" id="description" placeholder="Enter some description"></textarea>
-
-        <button type="submit">Submit</button>
-    </form>
+    <div class="header">
+        My Library
+    </div>
+    <div class="main">
+        <button class="open-dialog">+</button>
+        <dialog class="form-dialog">
+            <form method="dialog">
+                <div class="book-title">
+                    <label for="title">Book title:</label>
+                    <input type="text" name="title" id="title" required>
+                </div>
+                <div class="book-author">
+                    <label for="author">Book Author:</label>
+                    <input type="text" name="author" id="author" required>
+                </div>
+                <div class="book-pages">
+                    <label for="pages">Book Pages:</label>
+                    <input type="number" name="pages" id="pages" required>
+                </div>
+                <div class="book-status">
+                    <label for="book-status">Completed: </label>
+                    <input type="checkbox" name="book-status" id="book-status" value="Completed">
+                </div>
+                <div class="book-description">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" placeholder="Enter some description"></textarea>
+                </div>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </dialog>
+    </div>
+    <div class="footer"></div>
+    
 </body>
 
 </html>
