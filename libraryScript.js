@@ -95,7 +95,7 @@ document.addEventListener("click", event => {
     if (event.target.classList.contains("remove")) {
         let id = String(event.target.id)
         let card = document.querySelector( `.cards#${id}`)
-        document.body.removeChild(card)
+        main.removeChild(card)
 
         id = Number(id.slice(2,))
         myLibrary.forEach((book, index) => {
