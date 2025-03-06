@@ -24,6 +24,13 @@ body {
     align-items: center;
 }
 
+.open-dialog {
+    width: 10rem;
+    height: 10rem;
+    font-size: 8rem;
+    border-radius: 50%;
+
+}
 
 .cards {
     display: flex;
