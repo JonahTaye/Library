@@ -54,7 +54,13 @@ body {
     height: 10rem;
     font-size: 8rem;
     border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.068);
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.301);
+}
 
+.open-dialog:active {
+    box-shadow: none;
+    margin-top: 0.5rem;
 }
 
 .cards {
