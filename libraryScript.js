@@ -44,7 +44,7 @@ form.addEventListener("submit", (event) => {
         document.getElementById("title").value,
         document.getElementById("author").value,
         document.getElementById("pages").value,
-        checkbox.checked? checkbox.value: "Incomplete",
+        checkbox.checked? checkbox.value: "Not Read",
         document.getElementById("description").value
     )
 
@@ -76,6 +76,9 @@ function createCard() {
             readButton.textContent = newBook[i]
             readButton.id = `id${newBook[0]}`
             readButton.classList.add("statusBtn")
+            if (newBook[i] == "Read") readButton.style.backgroundColor = "#0B132B"
+            else readButton.style.backgroundColor = "#507DBC"
+
             card.appendChild(info)
             info.appendChild(readButton)
             continue
@@ -111,16 +114,18 @@ document.addEventListener("click", event => {
         let btn = document.querySelector(`.statusBtn#${id}`)
 
         id = Number(id.slice(2,))
-        if (btn.textContent == "Incomplete") {
-            btn.textContent = "Completed"
+        if (btn.textContent == "Not Read") {
+            btn.textContent = "Read"
+            btn.style.backgroundColor = "#0B132B"
             myLibrary.forEach((book) => {
-                if (book.includes(id)) book[4] = "Completed"
+                if (book.includes(id)) book[4] = "Read"
                 console.log(myLibrary)
             })
         } else {
-            btn.textContent = "Incomplete"
+            btn.textContent = "Not Read"
+            btn.style.backgroundColor = "#507DBC"
             myLibrary.forEach((book) => {
-                if (book.includes(id)) book[4] = "Incomplete"
+                if (book.includes(id)) book[4] = "Not Read"
                 console.log(myLibrary)
             })
         }
