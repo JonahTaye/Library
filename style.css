@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px black solid;
+    /* border: 1px black solid; */
 }
 
 body {
@@ -36,36 +36,44 @@ body {
     display: flex;
     flex-direction: column;
     justify-self: center;
-    gap: 10px;
+    gap: 1rem;
     padding: 20px 30px;
     width: max(20rem, 100%);
     height: max(20rem, 100%);
     font-size: max(1.5rem, 3vh);
+    text-align: center;
+    border-left: 3rem rgb(224, 79, 79) solid;
 }
 
 .cards > div:nth-child(1)::before {
     content: "Title: ";
     word-break: keep-all;
+    font-weight: 800;
 }
 
 .cards > div:nth-child(2)::before {
     content: "Author: ";
     word-break: keep-all;
+    font-weight: 800;
 }
 
 .cards > div:nth-child(3)::before {
     content: "Pages: ";
     word-break: keep-all;
+    font-weight: 800;
+
 }
 
 .cards > div:nth-child(5):not(div:empty)::before {
     content: "Description: ";
     word-break: keep-all;
+    font-weight: 800;
+
 }
 
 .cards > div:nth-child(5):not(div:empty) {
-    height: 10rem;
-    overflow-y: scroll;
+    max-height: 10rem;
+    overflow-y: auto;
 }
 
 .cards > div:empty {
@@ -134,7 +142,7 @@ input:not(input[type="checkbox"]) {
 
 textarea {
     resize: none;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: clamp(10rem, 3vw, 10vw);
     width: clamp(20rem, 35vw, 45vw);
     font-size: clamp(1.2rem, 2vw, 5vw);
@@ -152,9 +160,17 @@ textarea {
     margin-left: 1rem;
 }
 
-form button {
+form button, .remove, .statusBtn {
     width: 60%;
     align-self: center;
     font-size: clamp(1.1rem, 2vw, 5vw);
-    padding: 0.5rem 2rem;
+    padding: 0.3rem 2rem;
+    font-weight: 700;
+    border-radius: 0.3rem;
+
+}
+
+.remove, .statusBtn {
+    width: 15rem;
+    word-break: keep-all;
 }
