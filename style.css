@@ -44,7 +44,10 @@ body {
     height: max(20rem, 100%);
     font-size: max(1.5rem, 3vh);
     text-align: center;
-    border-left: 3rem rgb(224, 79, 79) solid;
+    border: 0.2rem black solid;
+    border-radius: 1rem;
+    box-shadow: 8px 10px 5px -3px rgba(0, 0, 0, 0.301);
+
 }
 
 .cards > div:nth-child(1)::before {
