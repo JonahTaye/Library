@@ -24,6 +24,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0.1rem black solid;
+    border-radius: 1rem;
 }
 
 .open-dialog {
