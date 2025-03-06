@@ -64,8 +64,6 @@ function createCard() {
     btn.classList.add("remove")
     card.classList.add("cards")
     
-    card.style.border = "1px solid black"
-
     let newBook = myLibrary.at(-1)
     card.id = `id${newBook[0]}`
     btn.id = `id${newBook[0]}`
