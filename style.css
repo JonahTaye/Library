@@ -73,14 +73,18 @@ body {
 
 }
 
-.cards > div:nth-child(1)::before {
-    content: "Title: ";
-    word-break: keep-all;
-    font-weight: 800;
+.cards > div:nth-child(1) {
+    font-size: clamp(1.5rem, 3vw, 4vw);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.cards > div:nth-child(2) {
+    text-transform: capitalize;
 }
 
 .cards > div:nth-child(2)::before {
-    content: "Author: ";
+    content: "By: ";
     word-break: keep-all;
     font-weight: 800;
 }
