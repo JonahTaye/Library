@@ -154,6 +154,13 @@ input:not(input[type="checkbox"]) {
 .book-pages:has(input:focus) label,
 .book-description:has(textarea:focus) label {
     top: -1rem;
+    border: 0.2rem white solid;
+    outline: 1px black solid;
+    border-radius: 0.4rem;
+    background-color: lightcoral;
+    color: white;
+    padding: 0 1rem;
+    transition: top 0.25s ease-in-out;
 }
 
 .book-title label, .book-author label, 
@@ -177,6 +184,12 @@ textarea {
 .book-pages:has(input:not(:placeholder-shown)) label,
 .book-description:has(textarea:not(:placeholder-shown)) label {
     top: -1rem;
+    border: 0.2rem white solid;
+    outline: 1px black solid;
+    border-radius: 0.4rem;
+    background-color: lightcoral;
+    color: white;
+    padding: 0 1rem;
 }
 
 .book-status label{
