@@ -142,11 +142,11 @@ input[type="checkbox"] {
 }
 
 input:not(input[type="checkbox"]) {
-    height: clamp(3rem, 3vw, 10vw);
+    height: clamp(4.1rem, 4vw, 10vw);
     width: clamp(20rem, 35vw, 45vw);
     padding: 1.5rem 1.5rem 0.5rem;
     font-size: clamp(1.5rem, 2vw, 5vw);
-
+    border-radius: 0.5rem;
 }
 
 .book-title:has(input:focus) label,
