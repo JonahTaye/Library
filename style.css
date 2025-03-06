@@ -18,6 +18,13 @@ body {
     grid-auto-rows: minmax(20rem, 1fr);
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .cards {
     display: flex;
     flex-direction: column;
