@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: 1px black solid; */
+    border: 1px black solid;
 }
 
 body {
@@ -10,6 +10,13 @@ body {
     grid-template-rows: 10rem 1fr 5rem;
     width: max(20rem, 100%);
     min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(3rem, 8vw, 10vw);
 }
 
 .main {
