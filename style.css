@@ -72,42 +72,49 @@ dialog {
 form {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.5rem;
 }
 
 form div {
     display: flex;
-    flex-direction: column;
-    height: 4rem;
-}
-
-label:not(:nth-child(4)) {
+    font-size: clamp(1.5rem, 2vw, 5vw);
     position: relative;
-    top: 1.5rem;
-    margin: 0 1rem;
-    padding: 0 1rem;
-    width: fit-content;
 }
 
-form div:nth-child(4), form > div:nth-child(4) label,
-form > div:nth-child(5) label {
-    flex-direction: row;
-    align-items: center;
-    position: unset;
-    
+.book-title, .book-author, .book-pages,
+.book-description {
+    flex-direction: column;
 }
 
-input[type="checkbox"] {
-    width: fit-content;
+input:not(input[type="checkbox"]) {
+    height: clamp(3rem, 3vw, 10vw);
+    width: clamp(20rem, 35vw, 45vw)
 }
 
-input {
-    height: 2rem;
-    border-color: red;
+.book-title:has(input:focus) label,
+.book-author:has(input:focus) label, 
+.book-pages:has(input:focus) label,
+.book-description:has(textarea:focus) label {
+    top: -1rem;
 }
 
-.book-title:has(input:focus) label, .book-author:has(input:focus) label,
-.book-pages:has(input:focus) label {
-    top: 0.6rem;
+.book-title label, .book-author label, 
+.book-pages label, .book-description label {
+    position: absolute;
+    margin-left: 1rem;
+    top: 0.5rem;
 }
 
+textarea {
+    resize: none;
+    overflow-y: scroll;
+    height: clamp(10rem, 3vw, 10vw);
+    width: clamp(20rem, 35vw, 45vw);
+}
+
+.book-title:has(input:not(:placeholder-shown)) label,
+.book-author:has(input:not(:placeholder-shown)) label,
+.book-pages:has(input:not(:placeholder-shown)) label,
+.book-description:has(textarea:not(:placeholder-shown)) label {
+    top: -1rem;
+}
