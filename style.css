@@ -7,6 +7,14 @@
     border: 1px black solid;
 }
 
+:root {
+    --dark-blue: #0B132B;
+    --light-blue: #507DBC;
+    --sky-blue: #A1C6EA;
+    --slight-blue: #BBD1EA;
+    --off-white: #DAE3E5;
+}
+
 body {
     display: grid;
     grid-template-rows: 15rem 1fr 5rem;
@@ -21,6 +29,8 @@ body {
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    background-color: var(--dark-blue);
+    color: var(--off-white);
 }
 
 .header-text {
@@ -39,6 +49,7 @@ body {
     grid-auto-rows: minmax(20rem, 1fr);
     padding: 2rem;
     gap: 2rem;
+    background-color: var(--slight-blue);
 }
 
 .button-container {
@@ -47,6 +58,7 @@ body {
     align-items: center;
     border: 0.1rem black solid;
     border-radius: 1rem;
+    background-color: var(--off-white);
 }
 
 .open-dialog {
@@ -56,6 +68,12 @@ body {
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.068);
     box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.301);
+    color: var(--dark-blue);
+}
+
+.open-dialog:hover {
+    background-color: var(--dark-blue);
+    color: var(--off-white);
 }
 
 .open-dialog:active {
@@ -76,7 +94,8 @@ body {
     border: 0.2rem black solid;
     border-radius: 1rem;
     box-shadow: 8px 10px 5px -3px rgba(0, 0, 0, 0.301);
-
+    background-color: var(--off-white);
+    color: var(--dark-blue);
 }
 
 .cards > div:nth-child(1) {
@@ -127,6 +146,8 @@ dialog {
     margin: auto;
     padding: 2rem;
     /* display: flex; */
+    background-color: var(--sky-blue);
+    border-radius: 1rem;
 }
 
 form {
@@ -139,6 +160,7 @@ form div {
     display: flex;
     font-size: clamp(1.5rem, 2vw, 5vw);
     position: relative;
+    color: var(--dark-blue);
 }
 
 .book-title, .book-author, .book-pages,
@@ -148,6 +170,16 @@ form div {
 
 .book-status {
     gap: 2rem;
+}
+
+input,textarea {
+    background-color: var(--off-white);
+    border-width: 0.1rem;
+}
+
+input:focus, textarea:focus {
+    outline-color: var(--dark-blue);
+    border-width: 0.3rem;
 }
 
 input[type="checkbox"] {
@@ -169,11 +201,11 @@ input:not(input[type="checkbox"]) {
 .book-pages:has(input:focus) label,
 .book-description:has(textarea:focus) label {
     top: -1rem;
-    border: 0.2rem white solid;
-    outline: 1px black solid;
+    border: 0.2rem var(--off-white) solid;
+    outline: 1px var(--dark-blue) solid;
     border-radius: 0.4rem;
-    background-color: lightcoral;
-    color: white;
+    background-color: var(--dark-blue);
+    color: var(--off-white);
     padding: 0 1rem;
     transition: top 0.25s ease-in-out;
 }
@@ -199,11 +231,11 @@ textarea {
 .book-pages:has(input:not(:placeholder-shown)) label,
 .book-description:has(textarea:not(:placeholder-shown)) label {
     top: -1rem;
-    border: 0.2rem white solid;
-    outline: 1px black solid;
+    border: 0.2rem var(--off-white) solid;
+    outline: 1px var(--dark-blue) solid;
     border-radius: 0.4rem;
-    background-color: lightcoral;
-    color: white;
+    background-color: var(--dark-blue);
+    color: var(--off-white);
     padding: 0 1rem;
 }
 
@@ -219,9 +251,32 @@ form button, .remove, .statusBtn {
     font-weight: 700;
     border-radius: 0.3rem;
     font-family: "IBM Plex Mono", monospace;
+    background-color: var(--dark-blue);
+    color: var(--off-white);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.301);
+    border: 0.1rem var(--off-white) solid;
+}
+
+form button {
+    background-color: var(--light-blue);
+    columns: var(--off-white);
+    border: 0.1rem var(--off-white) solid;
+}
+
+form button:hover {
+    background-color: #2f64af;
+}
+
+form button:active, .remove:active, .statusBtn:active {
+    box-shadow: none;
 }
 
 .remove, .statusBtn {
     width: 15rem;
     word-break: keep-all;
+}
+
+.footer {
+    background-color: var(--dark-blue);
+    color: var(--off-white);
 }
