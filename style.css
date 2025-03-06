@@ -66,7 +66,7 @@ dialog {
     inset: 0;
     margin: auto;
     padding: 2rem;
-    display: flex;
+    /* display: flex; */
 }
 
 form {
@@ -136,4 +136,11 @@ textarea {
 
 .book-status label{
     margin-left: 1rem;
+}
+
+form button {
+    width: 60%;
+    align-self: center;
+    font-size: clamp(1.1rem, 2vw, 5vw);
+    padding: 0.5rem 2rem;
 }
