@@ -277,6 +277,9 @@ form button:active, .remove:active, .statusBtn:active {
 }
 
 .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--dark-blue);
     color: var(--off-white);
 }
